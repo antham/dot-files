@@ -1,0 +1,12 @@
+XTerm*background:       black
+XTerm*foreground:       white
+XTerm*cursorColor:      white
+XTerm.vt100.geometry:   79x25
+XTerm*scrollTtyOutput:  false
+XTerm*metaSendsEscape: true
+Rxvt*scrollBar: false
+Rxvt*background: black
+Rxvt*foreground: white
+Rxvt*geometry: 110x35
+URxvt.perl-ext-common: default,clipboard
+URxvt*metaSendsEscape: true
