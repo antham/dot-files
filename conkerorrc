@@ -1,0 +1,127 @@
+
+// the default page for new buffers.
+homepage = "http://google.fr";
+
+
+// load urls from the command line in new buffers instead
+// of new windows.
+url_remoting_fn = load_url_in_new_buffer;
+url_completion_use_history = true;
+
+// load download buffers in the background in the current
+// window, instead of in new windows.
+download_buffer_automatic_open_target = OPEN_NEW_BUFFER_BACKGROUND;
+
+
+// display properties of the current selected node during
+// the hints interaction.
+hints_display_url_panel = true;
+
+
+// default directory for downloads and shell commands.
+cwd = get_home_directory();
+cwd.append("downloads");
+
+
+// automatically handle some mime types internally.
+content_handlers.set("application/pdf", content_handler_save);
+
+
+// external programs for handling various mime types.
+external_content_handlers.set("application/pdf", "xpdf");
+external_content_handlers.set("video/*", "xterm -e vlc");
+
+editor_shell_command = "urxvt -e emacsclient -t";
+
+
+// view source in your editor.
+view_source_use_external_editor = true;
+
+
+// let xkcd-mode put the funny alt text into the page.
+xkcd_add_title = true;
+
+define_webjump('delicious', 'http://delicious.com');
+
+define_webjump('wref', 'http://www.wordreference.com/enfr/%s');
+
+session_pref("xpinstall.whitelist.required", false);
+
+session_pref("signon.rememberSignons", true);
+session_pref("signon.expireMasterPassword", false);
+session_pref("signon.SignonFileName", "signons.txt");
+
+Components.classes["@mozilla.org/login-manager;1"]
+    .getService(Components.interfaces.nsILoginManager);
+
+interactive("delicious-post",
+            "bookmark the page via delicious",
+            function (I) {
+                check_buffer(I.buffer, content_buffer);
+                let posturl = 'https://api.del.icio.us/v1/posts/add?&url=' +
+                    encodeURIComponent(
+                        load_spec_uri_string(
+                            load_spec(I.buffer.top_frame))) +
+                    '&description=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                            $prompt = "name (required): ",
+                            $initial_value = I.buffer.title)) +
+                    '&tags=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                            $prompt = "tags (space delimited): ")) +
+                    '&extended=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                        $prompt = "extended description: "));
+
+                try {
+                    var content = yield send_http_request(
+                        load_spec({uri: posturl}));
+                    I.window.minibuffer.message(content.responseText);
+                } catch (e) { }
+            });
+
+interactive("delicious-post-link",
+            "bookmark the link via delicious",
+            function (I) {
+                bo = yield read_browser_object(I) ;
+                mylink = load_spec_uri_string(
+                    load_spec(encodeURIComponent(bo)));
+                check_buffer(I.buffer, content_buffer);
+                let postlinkurl = 'https://api.del.icio.us/v1/posts/add?&url=' +
+                    mylink +
+                    '&description=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                            $prompt = "name (required): ",
+                            $initial_value = bo.textContent)) +
+                    '&tags=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                            $prompt = "tags (space delimited): ")) +
+                    '&extended=' +
+                    encodeURIComponent(
+                        yield I.minibuffer.read(
+                            $prompt = "extended description: "));
+
+                try {
+                    var content = yield send_http_request(
+                        load_spec({uri: postlinkurl}));
+                    I.window.minibuffer.message(content.responseText);
+                } catch (e) { }
+            }, $browser_object = browser_object_links);
+
+define_key(default_global_keymap, "p", "delicious-post");
+define_key(default_global_keymap, "P", "delicious-post-link");
+
+function yubnub( args)
+{
+    var prefix = args[0];
+    readFromMiniBuffer(open_url_in_prompt(prefix,"yubnub command"), // prompt
+                       null,                                        // initval
+                       get_bm_strings(),                            // history
+                       function(url) { getBrowser().newBrowser("http://www.yubnub.org/parser/parse?command=" + url);}); // callback
+}
+add_command("y", yubnub, [["p"]]);
