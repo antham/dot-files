@@ -1,3 +1,4 @@
+hint_digits="abcdefghijklmnopqrstuvwxyz";
 
 // the default page for new buffers.
 homepage = "http://google.fr";
