@@ -116,13 +116,4 @@ interactive("delicious-post-link",
 
 define_key(default_global_keymap, "p", "delicious-post");
 define_key(default_global_keymap, "P", "delicious-post-link");
-
-function yubnub( args)
-{
-    var prefix = args[0];
-    readFromMiniBuffer(open_url_in_prompt(prefix,"yubnub command"), // prompt
-                       null,                                        // initval
-                       get_bm_strings(),                            // history
-                       function(url) { getBrowser().newBrowser("http://www.yubnub.org/parser/parse?command=" + url);}); // callback
-}
-add_command("y", yubnub, [["p"]]);
+define_key(default_global_keymap, "w", "switch-to-buffer");
