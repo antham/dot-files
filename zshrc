@@ -1,6 +1,7 @@
 autoload -U compinit
 autoload -U edit-command-line
 autoload -U promptinit
+autoload -U colors && colors
 
 compinit
 promptinit
@@ -47,6 +48,8 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
 export TERM="rxvt-unicode-256color"
+
+PROMPT="$(print '%{\e[1;31m%}%n%{\e[0m%}') | $(print '%{\e[1;31m%}%~%{\e[0m%}') %# "
 
 #Alias
 
