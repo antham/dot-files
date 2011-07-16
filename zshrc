@@ -1,11 +1,10 @@
+autoload -U colors && colors
 autoload -U compinit
 autoload -U edit-command-line
 autoload -U promptinit
-autoload -U colors && colors
 
 compinit
 promptinit
-prompt clint
 
 zle -N edit-command-line
 
@@ -28,10 +27,15 @@ setopt listpacked
 setopt nohup
 setopt nolisttypes
 setopt promptsubst
-setopt pushdignoredups
 setopt SH_WORD_SPLIT
 
 eval `dircolors -b`
+
+#Load config files
+
+for file in $HOME/.zsh/rc/*; do
+        source $file
+done
 
 #Keybinding
 
@@ -49,8 +53,10 @@ export HISTSIZE=500000
 export SAVEHIST=500000
 export TERM="rxvt-unicode-256color"
 
+#Prompt
+
 PROMPT="
-$(print '%{\e[1;31m%}%n%{\e[0m%}') | $(print '%{\e[1;31m%}%~%{\e[0m%}')
+$(print '%{\e[1;31m%}%n%{\e[0m%}') | $(print '%{\e[1;33m%}%~%{\e[0m%}') %{$reset_color%}
 %# "
 
 #Alias
@@ -69,7 +75,3 @@ then
   unfunction preexec
   PS1='$ '
 fi
-
-for file in $HOME/.zsh/rc/*.rc; do
-        source $file
-done
