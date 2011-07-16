@@ -55,9 +55,7 @@ export TERM="rxvt-unicode-256color"
 
 #Prompt
 
-PROMPT="
-$(print '%{\e[1;31m%}%n%{\e[0m%}') | $(print '%{\e[1;33m%}%~%{\e[0m%}') %{$reset_color%}
-%# "
+prompt adam2
 
 #Alias
 
