@@ -43,7 +43,7 @@ view_source_use_external_editor = true;
 xkcd_add_title = true;
 
 define_webjump('delicious', 'http://delicious.com');
-
+define_webjump('!g', 'http://grooveshark.com/#/search?q=%s');
 define_webjump('wref', 'http://www.wordreference.com/enfr/%s');
 
 session_pref("xpinstall.whitelist.required", false);
