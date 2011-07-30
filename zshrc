@@ -51,7 +51,6 @@ export EDITOR="emacsclient -t"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
-export TERM="rxvt-unicode-256color"
 
 #Prompt
 
@@ -64,12 +63,7 @@ alias c='clear'
 alias e='emacsclient -t'
 alias r='reset'
 
-if [[ "$TERM" == "dumb" ]]
+if [[ "$TERM" != "dumb" ]]
 then
-  unsetopt zle
-  unsetopt prompt_cr
-  unsetopt prompt_subst
-  unfunction precmd
-  unfunction preexec
-  PS1='$ '
+  export TERM="rxvt-unicode-256color"
 fi
