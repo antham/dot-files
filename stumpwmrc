@@ -1,7 +1,12 @@
 (defcommand show-battery () ()
   (print (run-shell-command "acpi" t)))
 
-(define-key *root-map* (kbd "c") "exec urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux")
+(defcommand terminal () ()
+  (run-or-raise "exec urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux" '(:instance "urxvt")))
+
+(stumpwm:set-prefix-key (stumpwm:kbd "C-z"))
+
+(define-key *root-map* (kbd "c") "terminal")
 (define-key *root-map* (kbd "y") "exec conkeror")
 (define-key *root-map* (kbd "*") "show-battery")
 
@@ -9,3 +14,4 @@
 (define-key *root-map* (kbd "C-Left") "move-window left")
 (define-key *root-map* (kbd "C-Down") "move-window down")
 (define-key *root-map* (kbd "C-Right") "move-window right")
+
