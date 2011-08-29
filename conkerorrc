@@ -119,3 +119,5 @@ interactive("delicious-post-link",
 define_key(default_global_keymap, "p", "delicious-post");
 define_key(default_global_keymap, "P", "delicious-post-link");
 define_key(default_global_keymap, "w", "switch-to-buffer");
+define_key(default_global_keymap, "/", "isearch-forward");
+define_key(default_global_keymap, "?", "isearch-backward");
