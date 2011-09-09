@@ -62,6 +62,7 @@ alias ls='ls --color=auto -F'
 alias c='clear'
 alias e='emacsclient -t'
 alias r='reset'
+alias sinh="cat ~/.zsh_history|ack --nocolor --nogroup -i"
 
 if [[ "$TERM" != "dumb" ]]
 then
