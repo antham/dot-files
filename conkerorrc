@@ -116,8 +116,27 @@ interactive("delicious-post-link",
                 } catch (e) { }
             }, $browser_object = browser_object_links);
 
+interactive("search-clipboard-contents", "Search in Google the content of the X clipboard (the selected text)",
+              "find-url",
+              $browser_object=
+              function(I) {
+                  return "g "+ read_from_x_primary_selection();
+              }
+);
+
+interactive("search-clipboard-contents-doublequoted", "Search in Google the content of the X clipboard (the selected text) as a fixed string",
+              "find-url",
+              $browser_object=
+              function(I) {
+                  return "g \""+ read_from_x_primary_selection()+"\"";
+              }
+
+);
+
 define_key(default_global_keymap, "p", "delicious-post");
 define_key(default_global_keymap, "P", "delicious-post-link");
+define_key(content_buffer_normal_keymap, "o", "search-clipboard-contents");
+define_key(content_buffer_normal_keymap, "O", "search-clipboard-contents-doublequoted");
 define_key(default_global_keymap, "w", "switch-to-buffer");
 define_key(default_global_keymap, "/", "isearch-forward");
 define_key(default_global_keymap, "?", "isearch-backward");
