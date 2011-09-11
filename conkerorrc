@@ -1,4 +1,4 @@
-hint_digits="qsdfgh";
+hint_digits="azerty";
 
 // the default page for new buffers.
 homepage = "http://google.fr";
