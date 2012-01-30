@@ -11,6 +11,7 @@ Rxvt*geometry: 110x35
 URxvt.perl-ext-common: default,clipboard
 URxvt*metaSendsEscape: true
 URxvt.iso14755: false
+URxvt.keysym.C-comma:   \033[,
 URxvt.keysym.C-semicolon:   \033[;
 URxvt.keysym.C-dollar:   \033[$
 URxvt.keysym.C-percent:   \033[%
