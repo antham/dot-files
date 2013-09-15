@@ -34,6 +34,8 @@ external_content_handlers.set("video/*", "xterm -e vlc");
 
 editor_shell_command = "urxvt -e emacsclient -t";
 
+//add firefox word to user agent
+user_pref('general.useragent.compatMode.firefox',true);
 
 // view source in your editor.
 view_source_use_external_editor = true;
