@@ -12,12 +12,13 @@ URxvt.perl-ext-common: default,clipboard
 URxvt*metaSendsEscape: true
 URxvt.iso14755: false
 URxvt.keysym.C-comma:   \033[,
+URxvt.keysym.C-ampersand:   \033[&
 URxvt.keysym.C-semicolon:   \033[;
 URxvt.keysym.C-dollar:   \033[$
 URxvt.keysym.C-percent:   \033[%
 URxvt.keysym.C-colon:   \033[:
 URxvt.keysym.C-exclam:   \033[!
 URxvt.keysym.C-asterisk:   \033[*
-URxvt.keysym.C-Acircumflex:   \033[^
+URxvt.keysym.C-circumflex:   \033[^
 URxvt.keysym.C-equal:   \033[=
 URxvt.keysym.C-parenleft:   \033[(
