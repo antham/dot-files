@@ -4,10 +4,13 @@
 (defcommand terminal () ()
   (run-or-raise "exec urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux" '(:instance "urxvt")))
 
+(defcommand conkeror () ()
+  (run-or-raise "conkeror" '(:class "conkeror")))
+
 (stumpwm:set-prefix-key (stumpwm:kbd "C-z"))
 
 (define-key *root-map* (kbd "c") "terminal")
-(define-key *root-map* (kbd "y") "exec conkeror")
+(define-key *root-map* (kbd "y") "conkeror")
 (define-key *root-map* (kbd "*") "show-battery")
 
 (define-key *root-map* (kbd "C-Up") "move-window up")
