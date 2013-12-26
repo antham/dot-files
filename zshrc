@@ -48,6 +48,7 @@ bindkey "^x^e" edit-command-line
 
 export BROWSER="w3m"
 export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -t"
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
