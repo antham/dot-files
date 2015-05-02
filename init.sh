@@ -8,3 +8,4 @@ ln -fs ~/dot-files/conkerorrc ~/.conkerorrc
 ln -fs ~/dot-files/gitconfig ~/.gitconfig
 ln -fs ~/dot-files/zsh/ ~/.zsh
 ln -fs ~/dot-files/zshrc ~/.zshrc
+ln -fs ~/dot-files/cwmrc ~/.cwmrc
