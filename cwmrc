@@ -1,6 +1,7 @@
-bind CM-t "urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux"
+bind CM-t "urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux new-session -A -s tmux"
 bind CM-y conkeror
 bind C-Up unmap
 bind C-Down unmap
 bind C-Left unmap
 bind C-Right unmap
+bind M-period unmap
