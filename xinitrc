@@ -1,4 +1,4 @@
 setxkbmap fr
 xrdb -merge ~/.Xresources
 xmodmap ~/.xmodmaprc
-exec /usr/bin/stumpwm
+exec /usr/bin/cwm
