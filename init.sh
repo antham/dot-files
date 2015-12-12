@@ -9,3 +9,5 @@ ln -fs ~/dot-files/gitconfig ~/.gitconfig
 ln -fs ~/dot-files/zsh/ ~/.zsh
 ln -fs ~/dot-files/zshrc ~/.zshrc
 ln -fs ~/dot-files/cwmrc ~/.cwmrc
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
