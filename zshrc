@@ -69,3 +69,5 @@ if [[ "$TERM" != "dumb" ]]
 then
   export TERM="screen-256color"
 fi
+
+. /etc/profile.d/fzf.zsh
