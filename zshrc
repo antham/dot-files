@@ -67,5 +67,5 @@ alias sinh="cat ~/.zsh_history|ack --nocolor --nogroup -i"
 
 if [[ "$TERM" != "dumb" ]]
 then
-  export TERM="rxvt-unicode-256color"
+  export TERM="screen-256color"
 fi
