@@ -67,7 +67,7 @@ alias sinh="cat ~/.zsh_history|ack --nocolor --nogroup -i"
 
 if [[ "$TERM" != "dumb" ]]
 then
-  export TERM="screen-256color"
+  export TERM="screen"
 fi
 
 . /etc/profile.d/fzf.zsh
