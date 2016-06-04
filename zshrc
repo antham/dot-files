@@ -23,6 +23,7 @@ setopt globdots
 setopt histignorealldups
 setopt histignorespace
 setopt histreduceblanks
+setopt sharehistory
 setopt listpacked
 setopt nohup
 setopt nolisttypes
