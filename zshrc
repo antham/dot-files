@@ -72,3 +72,6 @@ then
 fi
 
 . /etc/profile.d/fzf.zsh
+export SMAN_APPEND_HISTORY=false
+export SMAN_SNIPPET_DIR="~/dot-files/snippets"
+export SMAN_EXEC_CONFIRM=false

@@ -1,0 +1,4 @@
+srv:run:
+  do: exec
+  desc: Run a server
+  command: socat - TCP-LISTEN:<<port>>,fork
