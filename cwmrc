@@ -1,5 +1,6 @@
-bind CM-t "urxvt -tn 'rxvt-unicode-256color' -cr yellow -e tmux new-session"
-bind CM-y conkeror
+command term "alacritty -e tmux"
+command chrome-private "chromium --proxy-server='socks5://127.0.0.1:9050' --incognito"
+command firefox firefox
 bind C-Up unmap
 bind C-Down unmap
 bind C-Left unmap

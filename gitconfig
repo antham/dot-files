@@ -17,3 +17,6 @@
     untracked = red
 [push]
 	default = simple
+[user]
+	email = hamon.anth@gmail.com
+	name = Anthony HAMON
