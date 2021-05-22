@@ -6,3 +6,5 @@ bind C-Down unmap
 bind C-Left unmap
 bind C-Right unmap
 bind M-period unmap
+bind-key CM-c chromium
+bind-key CM-k firefox
