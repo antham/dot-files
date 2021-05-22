@@ -1,4 +1,4 @@
-command term "alacritty -e tmux"
+command term "alacritty -e tmux attach"
 command chrome-private "chromium --proxy-server='socks5://127.0.0.1:9050' --incognito"
 command firefox firefox
 bind C-Up unmap
