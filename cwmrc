@@ -8,3 +8,4 @@ bind C-Right unmap
 bind M-period unmap
 bind-key CM-c chromium
 bind-key CM-k firefox
+bind-key CM-v code
