@@ -1,5 +1,6 @@
 alias cat=bat
 alias ls=exa
+alias e="emacsclient -t"
 alias j=z
 set fzf_preview_file_cmd cat
 set fzf_preview_dir_cmd exa --all --color=always
